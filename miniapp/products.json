@@ -112,15 +112,15 @@
         },
         {
           "name": "Pastel Crystal",
-          "enabled": false
+          "enabled": true
         },
         {
           "name": "Rose Red",
-          "enabled": false
+          "enabled": true
         },
         {
           "name": "Mist Black",
-          "enabled": false
+          "enabled": true
         },
         {
           "name": "Mist White",
@@ -132,7 +132,7 @@
         },
         {
           "name": "Retro Pink",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "Cool Black",
@@ -140,7 +140,7 @@
         },
         {
           "name": "Cool Pink",
-          "enabled": true
+          "enabled": false
         }
       ]
     },
@@ -186,7 +186,7 @@
         },
         {
           "name": "Aurora Blue",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "Silk Green",
@@ -232,7 +232,7 @@
         },
         {
           "name": "Plume White",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "Plume Pink",
@@ -256,120 +256,6 @@
         },
         {
           "name": "Jelly Orange",
-          "enabled": false
-        }
-      ]
-    },
-    {
-      "id": "meloso_x",
-      "categoryId": "disposable",
-      "name": "MELOSO X (25K тяг)",
-      "description": "До 25000 затяжек\nНикотин: 50мг\nПремиум качество",
-      "price": 800,
-      "cashPrice": 800,
-      "stock": 30,
-      "icon": "💨",
-      "location": "Все точки",
-      "image": "AgACAgIAAxkBAAIEjWp0Wa6TXaxbKHdwUfG6AAFQ4yp4gQAC6xprG0jjqEvY-YCk4rAFbwEAAwIAA3kAAz0E",
-      "flavors": [
-        {
-          "name": "Арбуз лед",
-          "stock": "",
-          "enabled": true
-        },
-        {
-          "name": "Виноград кислое яблоко",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Виноград малина лед",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Вишня американская",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Всплеск ежевики",
-          "stock": "",
-          "enabled": true
-        },
-        {
-          "name": "Грейпфрут лимон",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Киви маракуйя",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Кислое яблоко лед",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Кислый виноград лед",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Клубничная жвачка",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Клубничный арбуз",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Клюква виноград лед",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Лайм ягоды апельсин",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Малина",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Прохладная мята",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Сочный персик лед",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Черника лед",
-          "stock": "",
-          "enabled": true
-        },
-        {
-          "name": "Черника малина лед",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Яблоко огурец",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Ягодный микс лед",
-          "stock": "",
           "enabled": false
         }
       ]
@@ -573,7 +459,7 @@
         {
           "name": "Жвачка смородина",
           "stock": "",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "Йогурт с персиком и черникой",
@@ -583,17 +469,17 @@
         {
           "name": "Кислый чупа-чупс с холодком",
           "stock": "",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "Клубнично-ежевичный морс",
           "stock": "",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "Малиновое варенье",
           "stock": "",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "Нектарин-вишня",
@@ -608,17 +494,17 @@
         {
           "name": "Фруктовый мармелад лёд",
           "stock": "",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "Черничный энергетик",
           "stock": "",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "Энергетик виноград лёд",
           "stock": "",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "Энергетик вишня лёд",
@@ -628,7 +514,7 @@
         {
           "name": "Энергетик смородина",
           "stock": "",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "Ягодный морс",
@@ -649,6 +535,21 @@
           "name": "Арбуз вишня",
           "stock": "",
           "enabled": false
+        },
+        {
+          "name": "Клубничный лимонад",
+          "stock": "",
+          "enabled": false
+        },
+        {
+          "name": "Виноградная кола",
+          "stock": "",
+          "enabled": false
+        },
+        {
+          "name": "Энергетик арбуз",
+          "stock": "",
+          "enabled": true
         }
       ]
     },
@@ -671,7 +572,8 @@
         },
         {
           "name": "Виноградный чупа-чупс",
-          "stock": ""
+          "stock": "",
+          "enabled": false
         },
         {
           "name": "Вишня Dr. Pepper",
@@ -681,7 +583,7 @@
         {
           "name": "Киви яблоко",
           "stock": "",
-          "enabled": false
+          "enabled": true
         },
         {
           "name": "Клубника банан",
@@ -701,7 +603,7 @@
         {
           "name": "Мята спрайт",
           "stock": "",
-          "enabled": false
+          "enabled": true
         },
         {
           "name": "Фруктовый мармелад",
@@ -749,7 +651,8 @@
         },
         {
           "name": "Кислая вишня",
-          "stock": ""
+          "stock": "",
+          "enabled": false
         },
         {
           "name": "Кислое зеленое яблоко",
@@ -757,7 +660,8 @@
         },
         {
           "name": "Кислый ягодный микс",
-          "stock": ""
+          "stock": "",
+          "enabled": false
         },
         {
           "name": "Клубничный лимонад",
@@ -800,7 +704,7 @@
         {
           "name": "Чернично смородиновый морс",
           "stock": "",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "Яблочный лимонад",
@@ -820,202 +724,37 @@
         {
           "name": "Виноградный энергетик",
           "stock": "",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "Виноградный демон",
           "stock": "",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "Земляника вишня",
           "stock": "",
           "enabled": true
-        }
-      ]
-    },
-    {
-      "id": "zloy_v2",
-      "categoryId": "liquids",
-      "name": "Bjorn Zloy v2 60мг",
-      "description": "Обновленная версия\nСолевой никотин\nОбъём: 30мл",
-      "price": 450,
-      "cashPrice": 450,
-      "stock": 50,
-      "icon": "💧",
-      "location": "Все точки",
-      "image": "AgACAgIAAxkBAAOdamtVxdn8UIQnb25HDirgFtmUM7AAAjIXaxu7VWBLcq5ARiickicBAAMCAAN4AAM9BA",
-      "flavors": [
-        {
-          "name": "Вишня клубника",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Ежевика",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Клубничный лимонад",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Клубничный холс",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Малиновая газировка",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Морозное яблоко",
-          "stock": ""
-        },
-        {
-          "name": "Мохито",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Смородина малина яблоко",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Черника лимон",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Яблоко виноград",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Яблоко малина",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Ягодный напиток",
-          "stock": "",
-          "enabled": false
-        }
-      ]
-    },
-    {
-      "id": "dota",
-      "categoryId": "liquids",
-      "name": "Дота 50мг",
-      "description": "Популярная солевая жидкость\nСбалансированный вкус\nОбъём: 30мл",
-      "price": 450,
-      "cashPrice": 450,
-      "stock": 45,
-      "icon": "💧",
-      "location": "Все точки",
-      "image": "AgACAgIAAxkBAAOfamtWSwGi8i92uuD85DzCtmpPh7IAAjQXaxu7VWBLGoFiwHtLFbIBAAMCAAN5AAM9BA",
-      "flavors": [
-        {
-          "name": "Арбуз Дыня Бабл-гам",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Арбуз Манго",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Вишня Персик Мята",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Клубника Виноград Мята",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Клубника Земляника Лёд",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Клубника Маракуйя",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Черешня Арбуз",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Черника Грейпфрут",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Яблоко Виноград",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Яблоко Персик",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Кислая клубника-драгонфрут",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Сладко-кислая синяя малина айс",
-          "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Ледяной ежевичный монстр",
-          "stock": "",
-          "enabled": false
         },
         {
           "name": "Смородиновый скитлс",
-          "stock": ""
-        },
-        {
-          "name": "Кислый вишнёвый Ред Булл",
           "stock": "",
           "enabled": false
         },
         {
-          "name": "Персик Манго Лит Энерджи",
+          "name": "Энергетик",
           "stock": "",
           "enabled": false
         },
         {
-          "name": "Ментос Виноград",
+          "name": "Виноградный энергетик",
           "stock": "",
           "enabled": false
         },
         {
-          "name": "Морозная фанта-виноград",
-          "stock": ""
-        },
-        {
-          "name": "Спрайт Черника Малина",
+          "name": "Яблоко киви",
           "stock": "",
-          "enabled": false
-        },
-        {
-          "name": "Хубба бубба со вкусом колы",
-          "stock": "",
-          "enabled": false
+          "enabled": true
         }
       ]
     },
@@ -1081,7 +820,7 @@
         {
           "name": "Вишня со льдом",
           "stock": "",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "Грейпфрут со льдом",
@@ -1101,7 +840,7 @@
         {
           "name": "Ежевика со льдом",
           "stock": "",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "Земляника со льдом",
@@ -1181,7 +920,7 @@
         {
           "name": "Черника со льдом",
           "stock": "",
-          "enabled": false
+          "enabled": true
         },
         {
           "name": "Черника-Грейпфрут со льдом",
@@ -1255,7 +994,7 @@
         {
           "name": "Вишня со льдом",
           "stock": "",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "Грейпфрут со льдом",
@@ -1275,7 +1014,7 @@
         {
           "name": "Ежевика со льдом",
           "stock": "",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "Земляника со льдом",
@@ -1370,7 +1109,7 @@
         {
           "name": "Яблоко со льдом",
           "stock": "",
-          "enabled": false
+          "enabled": true
         },
         {
           "name": "Ягоды со льдом",
@@ -1379,6 +1118,16 @@
         },
         {
           "name": "Лесные ягоды со льдом",
+          "stock": "",
+          "enabled": false
+        },
+        {
+          "name": "Киви со льдом",
+          "stock": "",
+          "enabled": false
+        },
+        {
+          "name": "Цитрусовый микс со льдом",
           "stock": "",
           "enabled": false
         }
@@ -1506,7 +1255,7 @@
         {
           "name": "Вишневый морс",
           "stock": "",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "Ежевика Мята",
@@ -1620,7 +1369,7 @@
         {
           "name": "Чёрная Смородина",
           "stock": "",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "Черника Вишня",
@@ -1640,7 +1389,7 @@
         {
           "name": "Ягодный Морс",
           "stock": "",
-          "enabled": false
+          "enabled": true
         }
       ]
     },
@@ -1833,12 +1582,12 @@
         {
           "name": "Арбузные Леденцы",
           "stock": "",
-          "enabled": false
+          "enabled": true
         },
         {
           "name": "Ежевичный Мармелад",
           "stock": "",
-          "enabled": false
+          "enabled": true
         },
         {
           "name": "Зелёный Бёрн (Энергетик)",
@@ -1863,7 +1612,7 @@
         {
           "name": "Кола Чупа-Чупс",
           "stock": "",
-          "enabled": false
+          "enabled": true
         },
         {
           "name": "Персик Зелёное яблоко",
@@ -1896,9 +1645,19 @@
           "enabled": false
         },
         {
-          "name": "Манго Маракуйя",
+          "name": "Яблоко лесной микс",
           "stock": "",
-          "enabled": false
+          "enabled": true
+        },
+        {
+          "name": "фруктовые мармеладные мишки",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Лимонад черника",
+          "stock": "",
+          "enabled": true
         }
       ]
     },
@@ -1936,7 +1695,8 @@
         },
         {
           "name": "Клубника Вишня",
-          "stock": ""
+          "stock": "",
+          "enabled": false
         },
         {
           "name": "Клубничная Шипучка",
@@ -1964,7 +1724,8 @@
         },
         {
           "name": "Черника Вишня",
-          "stock": ""
+          "stock": "",
+          "enabled": false
         },
         {
           "name": "Черника Лёд",
@@ -2012,7 +1773,8 @@
         },
         {
           "name": "Кислые конфеты",
-          "stock": ""
+          "stock": "",
+          "enabled": false
         },
         {
           "name": "Чизкейк с клубникой и бананом",
@@ -2121,11 +1883,13 @@
         },
         {
           "name": "Яблоко",
-          "stock": ""
+          "stock": "",
+          "enabled": true
         },
         {
           "name": "Синяя малина",
-          "stock": ""
+          "stock": "",
+          "enabled": false
         }
       ]
     },
@@ -2140,7 +1904,10 @@
       "icon": "📍",
       "image": "https://via.placeholder.com/400x300/bdc3c7/000?text=Cartridges",
       "options": [
-        "0.4 Ом",
+        {
+          "name": "0.4 Ом",
+          "enabled": false
+        },
         "0.6 Ом",
         "0.8 Ом"
       ],
@@ -2171,218 +1938,387 @@
       "enabled": true
     },
     {
-      "id": "cotton",
-      "categoryId": "accessories",
-      "name": "Ватки",
-      "description": "Органическая вата для обслуживания\nВысокое качество\nУдобная упаковка",
-      "price": 400,
-      "cashPrice": 400,
-      "stock": 40,
-      "icon": "📍",
-      "image": "AgACAgIAAxkBAAIOp2qEiQpTP9m1i5GIYC3GloWZ21CaAAIWGmsb54opSD2Z39RvSEB7AQADAgADeQADPQQ",
+      "categoryId": "liquids",
+      "icon": "💧",
+      "name": "Monster liquid ICEBERG 60MG",
+      "description": "",
+      "price": 450,
+      "cashPrice": 405,
       "flavors": [
         {
-          "name": "Sultan Cherry",
+          "name": "Ледяные ягоды",
           "stock": "",
           "enabled": true
         },
         {
-          "name": "African Sunberry",
+          "name": "Тропический смузи",
+          "stock": "",
+          "enabled": false
+        },
+        {
+          "name": "Морозный виноград",
           "stock": "",
           "enabled": true
         },
         {
-          "name": "Sibirskaya Myata",
+          "name": "Ментоловый спрайт",
           "stock": "",
           "enabled": true
         },
         {
-          "name": "Cherry Cola",
+          "name": "Вишневый смузи",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Морозная малина",
           "stock": "",
           "enabled": true
         }
       ],
-      "enabled": true
+      "id": "monster_liquid_icebe",
+      "stock": 50,
+      "enabled": true,
+      "location": "Все точки",
+      "image": "AgACAgIAAxkBAAIWMWqRtFAkxWaKF8A9J_nTFqhC7EczAAInHWsbyRGISFTnw0dCs-o8AQADAgADdwADPQQ"
     },
     {
-      "id": "shaiba",
-      "categoryId": "accessories",
-      "name": "Шайбы",
-      "description": "Никотиновые шайбы\nВыберите линейку\nРазличная крепость",
-      "price": 400,
-      "cashPrice": 400,
-      "stock": 50,
-      "icon": "📍",
-      "image": "AgACAgIAAxkBAAIOqmqEiSAwW8M51zvpGNP41KWREmkoAAIXGmsb54opSJX156reF1b9AQADAgADeQADPQQ",
-      "isParent": true,
-      "subProducts": [
-        "iceberg_ultra"
+      "categoryId": "liquids",
+      "icon": "💧",
+      "name": "Кислая убивашка 90МГ",
+      "description": "",
+      "price": 500,
+      "cashPrice": 450,
+      "flavors": [
+        {
+          "name": "Кислый мармелад",
+          "stock": "",
+          "enabled": false
+        },
+        {
+          "name": "Кислотные червяки",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Черные ягоды",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Малина ежевика",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Кислый Haribo",
+          "stock": "",
+          "enabled": true
+        }
       ],
-      "enabled": true
+      "id": "90",
+      "stock": 50,
+      "enabled": true,
+      "location": "Все точки",
+      "image": "AgACAgIAAxkBAAIWQ2qRtNVcVD5qlDOL3yVLt7zmwX8RAAIrHWsbyRGISHmbNCj4eLSjAQADAgADdwADPQQ"
     },
     {
-      "id": "iceberg_ultra",
-      "categoryId": "accessories",
-      "name": "IceBerg Ultra 150мг",
-      "description": "Никотиновые шайбы\nКрепость: 150мг\nДлительный эффект",
-      "price": 400,
-      "cashPrice": 400,
+      "categoryId": "liquids",
+      "icon": "💧",
+      "name": "Monster Liquid HARDCORE 60MG",
+      "description": "",
+      "price": 450,
+      "cashPrice": 405,
+      "flavors": [
+        {
+          "name": "Вишневый коктейль",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Черничный коктейль",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Виноградный коктейль",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Клубничный коктейль",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Экзотический коктейль",
+          "stock": "",
+          "enabled": true
+        }
+      ],
+      "id": "monster_liquid_hardc",
       "stock": 50,
+      "enabled": true,
+      "location": "Все точки",
+      "image": "AgACAgIAAxkBAAIaAAFqnpxAikGwBJdibGPDmouUp12VKwACkiVrG73F-Uh2pxkFGO8kXQEAAwIAA3cAAz0E"
+    },
+    {
+      "categoryId": "liquids",
+      "icon": "💧",
+      "name": "Монашка х HOTSPOT 70MG",
+      "description": "",
+      "price": 500,
+      "cashPrice": 450,
+      "flavors": [
+        {
+          "name": "Морозные лесные ягоды",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Черничный энергетик",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Вишня ледяной лайм",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Ледяной энергетик",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Мармеладные червячки",
+          "stock": "",
+          "enabled": true
+        }
+      ],
+      "id": "hotspot_70mg",
+      "stock": 50,
+      "enabled": true,
+      "location": "Все точки",
+      "image": "AgACAgIAAxkBAAIaDWqenIMdHCcQG0WVOWzXtlT4eY-YAAKTJWsbvcX5SBVNXUJnSAABpwEAAwIAA3cAAz0E"
+    },
+    {
+      "categoryId": "liquids",
+      "icon": "💧",
+      "name": "PODONKI Podgon",
+      "description": "",
+      "price": 350,
+      "cashPrice": 315,
+      "flavors": [
+        {
+          "name": "Виноград мята",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Черничная конфета",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Яблоко вишня",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Лесные ягоды",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Ягодный энергетик",
+          "stock": "",
+          "enabled": true
+        }
+      ],
+      "id": "podonki_podgon",
+      "stock": 50,
+      "enabled": true,
+      "location": "Все точки",
+      "image": "AgACAgIAAxkBAAIaG2qenOqJcnKSYEukEGcUltUYjVeKAAKVJWsbvcX5SOxTgYh31PhEAQADAgADdwADPQQ"
+    },
+    {
+      "categoryId": "disposable",
+      "name": "TYSON ROUND 2 12k",
+      "price": 600,
+      "cashPrice": 600,
+      "description": "",
+      "flavors": [
+        {
+          "name": "Very Berry",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Frozen Blueberry",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Blue Razz",
+          "stock": "",
+          "enabled": true
+        }
+      ],
+      "id": "tyson_round_2_12k",
+      "stock": 50,
+      "enabled": true,
+      "image": "AgACAgIAAxkBAAIaOGqenXcvdF1s-zOEbTDIoteQPRVjAAKZJWsbvcX5SHgzweH9VEuAAQADAgADdwADPQQ",
+      "location": "Нет данных"
+    },
+    {
+      "categoryId": "disposable",
+      "name": "GEEKBAR 60k",
+      "price": 1200,
+      "cashPrice": 1200,
+      "description": "",
+      "flavors": [
+        {
+          "name": "Blue Razz ICE",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Berry Bliss",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Californian Cherry",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Sour apple ICE",
+          "stock": "",
+          "enabled": true
+        }
+      ],
+      "id": "geekbar_60k",
+      "stock": 50,
+      "enabled": true,
+      "image": "AgACAgIAAxkBAAIaXWqen5Z9wdbtHne3Hjvg7vZmBEhfAAKyJWsbvcX5SNRJXlKPozTvAQADAgADdwADPQQ",
+      "location": "Нет данных"
+    },
+    {
+      "categoryId": "accessories",
       "icon": "📍",
       "parentId": "shaiba",
-      "image": "AgACAgIAAxkBAAIH9mqBVNDd9cQl821qf0NBpOuVcEBfAAJAG2sbTNgJSMJnZGyFiOZ2AQADAgADeQADPQQ",
-      "flavors": [
-        {
-          "name": "CRANBERRY TEA",
-          "stock": "",
-          "enabled": true
-        },
-        {
-          "name": "CRAZY MIX",
-          "stock": "",
-          "enabled": true
-        },
-        {
-          "name": "DOUBLE MINT",
-          "stock": "",
-          "enabled": true
-        },
-        {
-          "name": "DRAGON FIRE",
-          "stock": "",
-          "enabled": true
-        },
-        {
-          "name": "EMERALD",
-          "stock": "",
-          "enabled": true
-        },
-        {
-          "name": "ENERGY MANGO",
-          "stock": "",
-          "enabled": true
-        },
-        {
-          "name": "HOCKEY",
-          "stock": "",
-          "enabled": true
-        },
-        {
-          "name": "MANDARIN",
-          "stock": "",
-          "enabled": true
-        },
-        {
-          "name": "MENTHOL",
-          "stock": "",
-          "enabled": true
-        },
-        {
-          "name": "MULLED WINE",
-          "stock": "",
-          "enabled": true
-        },
-        {
-          "name": "RASPBERRY TEA",
-          "stock": "",
-          "enabled": true
-        },
-        {
-          "name": "SOUR BERRIES",
-          "stock": "",
-          "enabled": true
-        },
-        {
-          "name": "STRAWBERRY POMEGRANATE",
-          "stock": "",
-          "enabled": true
-        },
-        {
-          "name": "SWEET MINT",
-          "stock": "",
-          "enabled": true
-        }
-      ],
-      "enabled": true
-    },
-    {
-      "categoryId": "disposable",
-      "name": "Рик и Морти на замерзоне 18k",
-      "price": 1200,
-      "cashPrice": 1200,
+      "price": 400,
+      "cashPrice": 400,
+      "name": "ICEBurn ULTRA",
       "description": "",
       "flavors": [
         {
-          "name": "Скитлс лимон лайм",
+          "name": "Black Cherry",
           "stock": "",
           "enabled": true
         },
         {
-          "name": "Виноградный чупа чупс",
+          "name": "Energy",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "COOL mint",
           "stock": "",
           "enabled": true
         }
       ],
-      "id": "18k",
+      "id": "iceburn_ultra",
       "stock": 50,
       "enabled": true,
-      "image": "AgACAgIAAxkBAAIUDWqMD78ZgY_Hq71yogjTrlT95TEMAAKIH2sbWJphSBF7te17CcuOAQADAgADeAADPQQ",
-      "location": "Нет данных"
+      "image": "AgACAgIAAxkBAAIaa2qeoBN9e9oe31IxLM1lBNTqAlBpAAK1JWsbvcX5SA3s84HJ-d1vAQADAgADdwADPQQ"
     },
     {
-      "categoryId": "disposable",
-      "name": "Рик и Морти The Anime 15k",
-      "price": 1000,
-      "cashPrice": 1000,
+      "categoryId": "accessories",
+      "icon": "📍",
+      "name": "Ватки BJORN Х LOOP",
       "description": "",
+      "price": 400,
+      "cashPrice": 360,
       "flavors": [
         {
-          "name": "Вишнёвый энергетик",
+          "name": "AFRICAN SUNBERRY",
           "stock": "",
           "enabled": true
         }
       ],
-      "id": "the_anime_15k",
+      "id": "bjorn_loop",
       "stock": 50,
       "enabled": true,
-      "image": "AgACAgIAAxkBAAIUKGqMED7jOHDMgdvF5JZXy7adH7lLAAKKH2sbWJphSJDmT7NsCPZNAQADAgADeQADPQQ",
-      "location": "Нет данных"
+      "image": "AgACAgIAAxkBAAIaeGqeoLVgzQzxyobdKaDyKUN3GvhxAAK4JWsbvcX5SPBCaCp-lCG_AQADAgADeQADPQQ",
+      "location": "Все точки"
     },
     {
-      "categoryId": "disposable",
-      "name": "Riio MixJoy 25k",
-      "price": 1200,
-      "cashPrice": 1200,
+      "categoryId": "accessories",
+      "icon": "📍",
+      "name": "ICEBURN",
       "description": "",
-      "flavors": [
-        {
-          "name": "Мята Голубая малина",
-          "stock": "",
-          "enabled": true
-        }
-      ],
-      "id": "riio_mixjoy_25k",
-      "stock": 50,
-      "enabled": true,
-      "image": "AgACAgIAAxkBAAIUNGqMEJW6pC_82n1gj9WyYwLQZqW8AAKLH2sbWJphSH5cCR5Pu5mmAQADAgADeQADPQQ",
-      "location": "Нет данных"
-    },
-    {
-      "id": "annima",
-      "categoryId": "liquids",
-      "name": "Annima",
-      "description": "Популярная солевая жидкость\nВыберите линейку\nОбъём: 30мл",
       "price": 450,
-      "cashPrice": 450,
+      "cashPrice": 405,
+      "flavors": [
+        {
+          "name": "Black Cherry 150mg",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Cool mint 150mg",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Black energy 150mg",
+          "stock": "",
+          "enabled": true
+        }
+      ],
+      "id": "iceburn",
       "stock": 50,
-      "icon": "💧",
-      "location": "Все точки",
-      "image": "AgACAgIAAxkBAAOTamtTi_fBGDqgJ8aq-qiOizR3BTcAAisXaxu7VWBLFYZE6cMzdrUBAAMCAAN5AAM9BA",
-      "isParent": true,
-      "subProducts": [
-        "annima_gold",
-        "annima_sour"
-      ]
+      "enabled": true,
+      "image": "AgACAgIAAxkBAAIaa2qeoBN9e9oe31IxLM1lBNTqAlBpAAK1JWsbvcX5SA3s84HJ-d1vAQADAgADdwADPQQ",
+      "location": "Все точки"
+    },
+    {
+      "categoryId": "accessories",
+      "icon": "📍",
+      "name": "Ватки RED",
+      "description": "",
+      "price": 400,
+      "cashPrice": 360,
+      "flavors": [
+        {
+          "name": "Виноград",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Редбулл",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Яблоко",
+          "stock": "",
+          "enabled": true
+        },
+        {
+          "name": "Лимон лайм",
+          "stock": "",
+          "enabled": true
+        }
+      ],
+      "id": "red",
+      "stock": 50,
+      "enabled": true,
+      "image": "AgACAgIAAxkBAAIajmqeoYoKYxv9pwx9HP-ixd-dfpudAAK7JWsbvcX5SHx6exYAAbk__wEAAwIAA3cAAz0E",
+      "location": "Все точки"
     }
   ],
   "categories": [
