@@ -1,0 +1,90 @@
+[
+  {
+    "orderId": "MT70T3IZJ3ZT",
+    "id": "MT70T3IZJ3ZT",
+    "userId": 8492123455,
+    "username": ".",
+    "firstName": ".",
+    "items": [
+      {
+        "id": "razbashka_80",
+        "productId": "razbashka_80",
+        "name": "РАЗЪЕБАШКА 80МГ",
+        "flavor": "Чернично смородиновый морс",
+        "qty": 1,
+        "price": 500
+      }
+    ],
+    "total": 500,
+    "pickupPoint": "Метро Победы",
+    "source": "miniapp_api",
+    "status": "confirmed",
+    "date": "2026-08-24T09:15:19.996Z"
+  },
+  {
+    "orderId": "MT70Z0KB7IW7",
+    "id": "MT70Z0KB7IW7",
+    "userId": 8492123455,
+    "username": ".",
+    "firstName": ".",
+    "items": [
+      {
+        "id": "razbashka_80",
+        "productId": "razbashka_80",
+        "name": "РАЗЪЕБАШКА 80МГ",
+        "flavor": "Чернично смородиновый морс",
+        "qty": 1,
+        "price": 500
+      }
+    ],
+    "total": 500,
+    "pickupPoint": "Метро Победы",
+    "source": "miniapp_api",
+    "status": "completed",
+    "date": "2026-08-24T09:19:55.948Z"
+  },
+  {
+    "orderId": "MT715KQXC3YA",
+    "id": "MT715KQXC3YA",
+    "userId": 8492123455,
+    "username": ".",
+    "firstName": ".",
+    "items": [
+      {
+        "id": "razbashka_80",
+        "productId": "razbashka_80",
+        "name": "РАЗЪЕБАШКА 80МГ",
+        "flavor": "Чернично смородиновый морс",
+        "qty": 1,
+        "price": 500
+      }
+    ],
+    "total": 500,
+    "pickupPoint": "Метро Победы",
+    "source": "miniapp_api",
+    "status": "confirmed",
+    "date": "2026-08-24T09:25:02.049Z"
+  },
+  {
+    "orderId": "MT71A3PKAFZO",
+    "id": "MT71A3PKAFZO",
+    "userId": 8492123455,
+    "username": ".",
+    "firstName": ".",
+    "items": [
+      {
+        "id": "razbashka_80",
+        "productId": "razbashka_80",
+        "name": "РАЗЪЕБАШКА 80МГ",
+        "flavor": "Яблочный лимонад",
+        "qty": 1,
+        "price": 500
+      }
+    ],
+    "total": 500,
+    "pickupPoint": "Метро Победы",
+    "source": "miniapp_api",
+    "status": "completed",
+    "date": "2026-08-24T09:28:33.221Z"
+  }
+]

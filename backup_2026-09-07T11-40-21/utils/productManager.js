@@ -60,7 +60,6 @@ function readProductsFile() {
  */
 function saveProductsFile(categories, products) {
   try {
-    // Сохраняем в data/products.js
     const content = `// Категории товаров
 const categories = ${JSON.stringify(categories, null, 2)};
 
@@ -72,20 +71,11 @@ module.exports = { categories, products };
     
     fs.writeFileSync(PRODUCTS_FILE, content, 'utf8');
     
-    // Синхронизируем с miniapp/products.json для fallback
-    try {
-      const miniappFile = path.join(__dirname, '../miniapp/products.json');
-      fs.writeFileSync(miniappFile, JSON.stringify({ categories, products }, null, 2), 'utf8');
-      console.log('✅ miniapp/products.json синхронизирован');
-    } catch (err) {
-      console.warn('⚠️ Не удалось синхронизировать miniapp/products.json:', err.message);
-    }
-    
     // Инвалидируем кеш require чтобы изменения подтянулись
     delete require.cache[require.resolve('../data/products.js')];
     
     // Сохраняем в Redis (асинхронно, не ждем результата)
-    saveToRedis({ products, categories }).catch(err => console.error('Redis save error:', err));
+    saveToRedis(products).catch(err => console.error('Redis save error:', err));
     
     return true;
   } catch (e) {

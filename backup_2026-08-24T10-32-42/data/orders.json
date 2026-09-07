@@ -1,0 +1,70 @@
+[
+  {
+    "id": "MSW2AGFMJMUFP",
+    "userId": 8277531129,
+    "username": "neresu",
+    "firstName": "Сириус",
+    "chatId": 8277531129,
+    "items": [
+      {
+        "productId": "podonki",
+        "quantity": 1,
+        "flavor": "Клубника Вишня"
+      }
+    ],
+    "total": 500,
+    "date": "2026-08-16T17:11:20.242Z",
+    "status": "pending"
+  },
+  {
+    "id": "MSW2BI0UM10VE",
+    "userId": 8492123455,
+    "username": "Не указан",
+    "firstName": ".",
+    "chatId": 8492123455,
+    "items": [
+      {
+        "productId": "angry_vape",
+        "quantity": 1,
+        "flavor": "Кислые конфеты"
+      }
+    ],
+    "total": 350,
+    "date": "2026-08-16T17:12:08.958Z",
+    "status": "pending"
+  },
+  {
+    "id": "MSW3QFD2ECB8T",
+    "userId": 8277531129,
+    "username": "neresu",
+    "firstName": "Сириус",
+    "chatId": 8277531129,
+    "items": [
+      {
+        "productId": "angry_vape",
+        "quantity": 1,
+        "flavor": "Кислые конфеты"
+      }
+    ],
+    "total": 350,
+    "date": "2026-08-16T17:51:44.966Z",
+    "status": "confirmed"
+  },
+  {
+    "id": "MSW3X2S2KGV2R",
+    "userId": 8277531129,
+    "username": "neresu",
+    "firstName": "Сириус",
+    "chatId": 8277531129,
+    "items": [
+      {
+        "productId": "pasito_coil",
+        "quantity": 1,
+        "flavor": null
+      }
+    ],
+    "total": 300,
+    "date": "2026-08-16T17:56:55.250Z",
+    "status": "confirmed"
+  }
+]

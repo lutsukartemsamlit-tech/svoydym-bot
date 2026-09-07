@@ -1,0 +1,585 @@
+[
+  {
+    "orderId": "MT70T3IZJ3ZT",
+    "id": "MT70T3IZJ3ZT",
+    "userId": 8492123455,
+    "username": ".",
+    "firstName": ".",
+    "items": [
+      {
+        "id": "razbashka_80",
+        "productId": "razbashka_80",
+        "name": "РАЗЪЕБАШКА 80МГ",
+        "flavor": "Чернично смородиновый морс",
+        "qty": 1,
+        "price": 500
+      }
+    ],
+    "total": 500,
+    "pickupPoint": "Метро Победы",
+    "source": "miniapp_api",
+    "status": "confirmed",
+    "date": "2026-08-24T09:15:19.996Z"
+  },
+  {
+    "orderId": "MT70Z0KB7IW7",
+    "id": "MT70Z0KB7IW7",
+    "userId": 8492123455,
+    "username": ".",
+    "firstName": ".",
+    "items": [
+      {
+        "id": "razbashka_80",
+        "productId": "razbashka_80",
+        "name": "РАЗЪЕБАШКА 80МГ",
+        "flavor": "Чернично смородиновый морс",
+        "qty": 1,
+        "price": 500
+      }
+    ],
+    "total": 500,
+    "pickupPoint": "Метро Победы",
+    "source": "miniapp_api",
+    "status": "completed",
+    "date": "2026-08-24T09:19:55.948Z"
+  },
+  {
+    "orderId": "MT715KQXC3YA",
+    "id": "MT715KQXC3YA",
+    "userId": 8492123455,
+    "username": ".",
+    "firstName": ".",
+    "items": [
+      {
+        "id": "razbashka_80",
+        "productId": "razbashka_80",
+        "name": "РАЗЪЕБАШКА 80МГ",
+        "flavor": "Чернично смородиновый морс",
+        "qty": 1,
+        "price": 500
+      }
+    ],
+    "total": 500,
+    "pickupPoint": "Метро Победы",
+    "source": "miniapp_api",
+    "status": "confirmed",
+    "date": "2026-08-24T09:25:02.049Z"
+  },
+  {
+    "orderId": "MT71A3PKAFZO",
+    "id": "MT71A3PKAFZO",
+    "userId": 8492123455,
+    "username": ".",
+    "firstName": ".",
+    "items": [
+      {
+        "id": "razbashka_80",
+        "productId": "razbashka_80",
+        "name": "РАЗЪЕБАШКА 80МГ",
+        "flavor": "Яблочный лимонад",
+        "qty": 1,
+        "price": 500
+      }
+    ],
+    "total": 500,
+    "pickupPoint": "Метро Победы",
+    "source": "miniapp_api",
+    "status": "completed",
+    "date": "2026-08-24T09:28:33.221Z"
+  },
+  {
+    "id": "MT7FJAZZW5GWN",
+    "userId": 8716153893,
+    "username": "dima4erepovec",
+    "firstName": "Дима",
+    "chatId": 8716153893,
+    "items": [
+      {
+        "productId": "xros6mini",
+        "quantity": 1,
+        "flavor": "Plume Blue"
+      }
+    ],
+    "total": 1800,
+    "date": "2026-08-24T16:07:36.048Z",
+    "status": "cancelled"
+  },
+  {
+    "id": "MT7FKRLRVOO0Z",
+    "userId": 8716153893,
+    "username": "dima4erepovec",
+    "firstName": "Дима",
+    "chatId": 8716153893,
+    "items": [
+      {
+        "productId": "xros5mini",
+        "quantity": 1,
+        "flavor": "Retro Pink"
+      },
+      {
+        "productId": "xros5mini",
+        "quantity": 1,
+        "flavor": "Cool Pink"
+      }
+    ],
+    "total": 3000,
+    "date": "2026-08-24T16:08:44.223Z",
+    "status": "cancelled"
+  },
+  {
+    "id": "MT7FL1OLEZA0K",
+    "userId": 8716153893,
+    "username": "dima4erepovec",
+    "firstName": "Дима",
+    "chatId": 8716153893,
+    "items": [
+      {
+        "productId": "xros5mini",
+        "quantity": 1,
+        "flavor": "Cool Pink"
+      },
+      {
+        "productId": "xros5mini",
+        "quantity": 1,
+        "flavor": "Retro Pink"
+      }
+    ],
+    "total": 3000,
+    "date": "2026-08-24T16:08:57.285Z",
+    "status": "cancelled"
+  },
+  {
+    "id": "MT7FLDX1YBE4B",
+    "userId": 8716153893,
+    "username": "dima4erepovec",
+    "firstName": "Дима",
+    "chatId": 8716153893,
+    "items": [
+      {
+        "productId": "cartridges",
+        "quantity": 1,
+        "flavor": "0.8 Ом"
+      },
+      {
+        "productId": "cartridges",
+        "quantity": 1,
+        "flavor": "0.6 Ом"
+      }
+    ],
+    "total": 600,
+    "date": "2026-08-24T16:09:13.141Z",
+    "status": "cancelled"
+  },
+  {
+    "id": "MT7JNH71ZY37A",
+    "userId": 7671261349,
+    "username": "A1IKA0A",
+    "firstName": "༒❯❯𝐀̶𝟏̷̚𝐈̸𝐊⃟𝐀͢𒁍༒ᵗˢᵈ",
+    "chatId": 7671261349,
+    "items": [
+      {
+        "productId": "xros6mini",
+        "quantity": 1,
+        "flavor": "Titanium Black"
+      },
+      {
+        "productId": "rick_morty_ice",
+        "quantity": 1,
+        "flavor": "Вишневый морс"
+      }
+    ],
+    "total": 2200,
+    "date": "2026-08-24T18:02:49.165Z",
+    "status": "cancelled"
+  },
+  {
+    "id": "MT9WCBHBWH3C2",
+    "userId": 243703323,
+    "username": "N_i_k_o_l_a_y22",
+    "firstName": "𝑁𝑖𝑘𝑜𝑙𝑎𝑦🖤",
+    "chatId": 243703323,
+    "items": [
+      {
+        "productId": "xros6",
+        "quantity": 1,
+        "flavor": "Aurora Blue"
+      }
+    ],
+    "total": 2200,
+    "date": "2026-08-26T09:33:35.903Z",
+    "status": "completed"
+  },
+  {
+    "id": "MTA7HETOV5R61",
+    "userId": 1777496469,
+    "username": "Z11YI",
+    "firstName": "котеночная",
+    "chatId": 1777496469,
+    "items": [
+      {
+        "productId": "meloso_x",
+        "quantity": 1,
+        "flavor": "Всплеск ежевики"
+      }
+    ],
+    "total": 800,
+    "date": "2026-08-26T14:45:29.292Z",
+    "status": "completed"
+  },
+  {
+    "id": "MTCO9X0SI0MSO",
+    "userId": 2021261832,
+    "username": "MiffidXD",
+    "firstName": "Миффи",
+    "chatId": 2021261832,
+    "items": [
+      {
+        "productId": "skala_20",
+        "quantity": 1,
+        "flavor": "Цитрусовый микс со льдом"
+      },
+      {
+        "productId": "cartridges",
+        "quantity": 1,
+        "flavor": "0.6 Ом"
+      }
+    ],
+    "total": 700,
+    "date": "2026-08-28T08:11:05.452Z",
+    "status": "cancelled"
+  },
+  {
+    "id": "MTDG1Q2PYT1TR",
+    "userId": 5908969549,
+    "username": "galkafaxi",
+    "firstName": "RRK おやすみ159",
+    "chatId": 5908969549,
+    "items": [
+      {
+        "productId": "razbashka_80",
+        "quantity": 1,
+        "flavor": "Вишневый сироп"
+      },
+      {
+        "productId": "xros5mini",
+        "quantity": 1,
+        "flavor": "Cool Black"
+      }
+    ],
+    "total": 2000,
+    "date": "2026-08-28T21:08:32.449Z",
+    "status": "cancelled"
+  },
+  {
+    "id": "MTDHPWFVLYAQ6",
+    "userId": 1926281709,
+    "username": "mikilrws",
+    "firstName": "кирочка",
+    "chatId": 1926281709,
+    "items": [
+      {
+        "productId": "xros5mini",
+        "quantity": 1,
+        "flavor": "Pastel Crystal"
+      }
+    ],
+    "total": 1500,
+    "date": "2026-08-28T21:55:20.059Z",
+    "status": "confirmed"
+  },
+  {
+    "id": "MTE7RP9NDGZ3X",
+    "userId": 8277531129,
+    "username": "neresu",
+    "firstName": "Сириус",
+    "chatId": 8277531129,
+    "items": [
+      {
+        "productId": "razbashka_80",
+        "quantity": 1,
+        "flavor": "Энергетик"
+      },
+      {
+        "productId": "cartridges",
+        "quantity": 1,
+        "flavor": "0.4 Ом"
+      }
+    ],
+    "total": 800,
+    "date": "2026-08-29T10:04:34.091Z",
+    "status": "completed"
+  },
+  {
+    "id": "MTE8SN11Y5UOC",
+    "userId": 6125674194,
+    "username": "Potali",
+    "firstName": "datebae",
+    "chatId": 6125674194,
+    "items": [
+      {
+        "productId": "evil_nun",
+        "quantity": 1,
+        "flavor": "Фруктовый мармелад лёд"
+      },
+      {
+        "productId": "cartridges",
+        "quantity": 1,
+        "flavor": "0.8 Ом"
+      }
+    ],
+    "total": 800,
+    "date": "2026-08-29T10:33:17.461Z",
+    "status": "confirmed"
+  },
+  {
+    "id": "MTGXQH2H76C3C",
+    "userId": 7386797632,
+    "username": "Gamer22794790",
+    "firstName": "Илюха",
+    "chatId": 7386797632,
+    "items": [
+      {
+        "productId": "geek_bar_60k",
+        "quantity": 1,
+        "flavor": "Кислое яблоко лед"
+      }
+    ],
+    "total": 1200,
+    "date": "2026-08-31T07:46:59.177Z",
+    "status": "completed"
+  },
+  {
+    "id": "MTH7NPYM1YLHR",
+    "userId": 8277531129,
+    "username": "neresu",
+    "firstName": "Сириус",
+    "chatId": 8277531129,
+    "items": [
+      {
+        "productId": "razbashka_80",
+        "quantity": 1,
+        "flavor": "Энергетик"
+      },
+      {
+        "productId": "cartridges",
+        "quantity": 2,
+        "flavor": "0.4 Ом"
+      }
+    ],
+    "total": 1100,
+    "date": "2026-08-31T12:24:46.894Z",
+    "status": "completed"
+  },
+  {
+    "id": "MTHYQ3NXM7NCS",
+    "userId": 1417385348,
+    "username": "Kikon8",
+    "firstName": "kikochi",
+    "chatId": 1417385348,
+    "items": [
+      {
+        "productId": "xros5mini",
+        "quantity": 1,
+        "flavor": "Retro Pink"
+      }
+    ],
+    "total": 1500,
+    "date": "2026-09-01T01:02:27.597Z",
+    "status": "pending"
+  },
+  {
+    "id": "MTIE5IMF712GN",
+    "userId": 2109318267,
+    "username": "Whyyyf",
+    "firstName": "-",
+    "chatId": 2109318267,
+    "items": [
+      {
+        "productId": "xros6mini",
+        "quantity": 1,
+        "flavor": "Plume White"
+      },
+      {
+        "productId": "skala_50",
+        "quantity": 1,
+        "flavor": "Кола со льдом"
+      }
+    ],
+    "total": 2200,
+    "date": "2026-09-01T08:14:21.063Z",
+    "status": "cancelled"
+  },
+  {
+    "orderId": "MTIHXMFSRDJJ",
+    "id": "MTIHXMFSRDJJ",
+    "userId": 6080990830,
+    "username": "@Storm_43",
+    "firstName": "堀京介 ♓️ 𝔰🆃𝕠『r』𝓶 ♓️ トガヒミコ",
+    "items": [
+      {
+        "id": "geek_bar_60k",
+        "productId": "geek_bar_60k",
+        "name": "Geek Bar 60k",
+        "flavor": "Скитлс",
+        "qty": 1,
+        "price": 1200
+      }
+    ],
+    "total": 1200,
+    "pickupPoint": "Метро Победы",
+    "source": "miniapp_api",
+    "status": "pending",
+    "date": "2026-09-01T10:00:12.172Z"
+  },
+  {
+    "id": "MTII19YJMPCL5",
+    "userId": 6080990830,
+    "username": "Storm_43",
+    "firstName": "堀京介 ♓️ 𝔰🆃𝕠『r』𝓶 ♓️ トガヒミコ",
+    "chatId": 6080990830,
+    "items": [
+      {
+        "productId": "geek_bar_60k",
+        "quantity": 1,
+        "flavor": "Скитлс"
+      }
+    ],
+    "total": 1200,
+    "date": "2026-09-01T10:03:01.675Z",
+    "status": "completed"
+  },
+  {
+    "id": "MTIPPMMDLRTEX",
+    "userId": 8870599912,
+    "username": "Не указан",
+    "firstName": "психоз",
+    "chatId": 8870599912,
+    "items": [
+      {
+        "productId": "18k",
+        "quantity": 1,
+        "flavor": "Виноградный чупа чупс"
+      }
+    ],
+    "total": 1200,
+    "date": "2026-09-01T13:37:55.141Z",
+    "status": "pending"
+  },
+  {
+    "orderId": "MTK1T0G2FE0N",
+    "id": "MTK1T0G2FE0N",
+    "userId": 7992519197,
+    "username": "@byrmalda_venom",
+    "firstName": "Дегустатор",
+    "items": [
+      {
+        "id": "hysterica",
+        "productId": "hysterica",
+        "name": "Истерика 60мг",
+        "flavor": "Ежевичный Мармелад",
+        "qty": 1,
+        "price": 400
+      }
+    ],
+    "total": 400,
+    "pickupPoint": "Метро Победы",
+    "source": "miniapp_api",
+    "status": "pending",
+    "date": "2026-09-02T12:04:16.165Z"
+  },
+  {
+    "id": "MTK2ASQOJ3V57",
+    "userId": 7992519197,
+    "username": "byrmalda_venom",
+    "firstName": "Дегустатор",
+    "chatId": 7992519197,
+    "items": [
+      {
+        "productId": "hysterica",
+        "quantity": 1,
+        "flavor": "Ежевичный Мармелад"
+      }
+    ],
+    "total": 400,
+    "date": "2026-09-02T12:18:04.416Z",
+    "status": "cancelled"
+  },
+  {
+    "id": "MTK2QPG11ADGS",
+    "userId": 7992519197,
+    "username": "byrmalda_venom",
+    "firstName": "Дегустатор",
+    "chatId": 7992519197,
+    "items": [
+      {
+        "productId": "hysterica",
+        "quantity": 1,
+        "flavor": "Яблоко лесной микс"
+      }
+    ],
+    "total": 400,
+    "date": "2026-09-02T12:30:26.641Z",
+    "status": "completed"
+  },
+  {
+    "id": "MTLC68NNQGJSL",
+    "userId": 5318573989,
+    "username": "Sunflower_oleg1511",
+    "firstName": "sunflower",
+    "chatId": 5318573989,
+    "items": [
+      {
+        "productId": "razbashka_80",
+        "quantity": 1,
+        "flavor": "Смородиновый скитлс"
+      },
+      {
+        "productId": "cartridges",
+        "quantity": 1,
+        "flavor": "0.6 Ом"
+      }
+    ],
+    "total": 800,
+    "date": "2026-09-03T09:42:14.099Z",
+    "status": "completed"
+  },
+  {
+    "id": "MTLX2MN1GVJH7",
+    "userId": 7138531700,
+    "username": "Pepeprll",
+    "firstName": ".",
+    "chatId": 7138531700,
+    "items": [
+      {
+        "productId": "iceberg_ultra",
+        "quantity": 1,
+        "flavor": "SOUR BERRIES"
+      }
+    ],
+    "total": 400,
+    "date": "2026-09-03T19:27:17.533Z",
+    "status": "cancelled"
+  },
+  {
+    "orderId": "MTLXN5YYKLCO",
+    "id": "MTLXN5YYKLCO",
+    "userId": 7138531700,
+    "username": "@Pepeprll",
+    "firstName": ".",
+    "items": [
+      {
+        "id": "meloso_x",
+        "productId": "meloso_x",
+        "name": "MELOSO X (25K тяг)",
+        "flavor": "Арбуз лед",
+        "qty": 1,
+        "price": 800
+      }
+    ],
+    "total": 800,
+    "pickupPoint": "Метро Победы",
+    "source": "miniapp_api",
+    "status": "pending",
+    "date": "2026-09-03T19:43:16.953Z"
+  }
+]

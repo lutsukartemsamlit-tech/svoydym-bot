@@ -402,7 +402,7 @@ bot.onText(/\/check_orders/, (msg) => {
   bot.sendMessage(chatId, text);
 });
 
-// Команда для админов - добавить вкусы/цвета к товарам
+// Команда для админов - добавить вкусы к существующей жидкости
 bot.onText(/\/add_flavors/, (msg) => {
   const chatId = msg.chat.id;
   const userId = msg.from.id;
@@ -412,16 +412,22 @@ bot.onText(/\/add_flavors/, (msg) => {
     return;
   }
   
-  // Показываем кнопки выбора категории
-  const keyboard = [
-    [{ text: '💧 Жидкости (вкусы)', callback_data: 'addflav_cat_liquids' }],
-    [{ text: '📍 Ватки (вкусы)', callback_data: 'addflav_cat_cotton' }],
-    [{ text: '📍 Шайбы (вкусы)', callback_data: 'addflav_cat_shaiba' }],
-    [{ text: '❤️‍🔥 Одноразки (цвета)', callback_data: 'addflav_cat_disposable' }]
-  ];
+  // Получаем список жидкостей из загруженных данных (из Redis)
+  const liquids = products.filter(p => p.categoryId === 'liquids');
+  
+  if (liquids.length === 0) {
+    bot.sendMessage(chatId, '❌ Нет жидкостей в каталоге');
+    return;
+  }
+  
+  // Показываем список жидкостей для выбора
+  const keyboard = liquids.slice(0, 20).map(liquid => [{
+    text: liquid.name,
+    callback_data: `addflavor_${liquid.id}`
+  }]);
   
   bot.sendMessage(chatId,
-    '🎨 *Добавление вкусов/цветов*\n\nВыберите категорию товаров:',
+    '💧 *Выберите жидкость для добавления вкусов:*',
     {
       parse_mode: 'Markdown',
       reply_markup: {
@@ -654,7 +660,7 @@ bot.on('message', async (msg) => {
       // state cleared, fall through to normal switch handler
     }
 
-    // Добавление вкусов/цветов к существующему товару
+    // Добавление вкусов к существующей жидкости
     if (state.step === 'add_flavors') {
       // Перезагружаем товары из Redis чтобы получить актуальные данные
       await loadProductsFromRedis();
@@ -666,34 +672,30 @@ bot.on('message', async (msg) => {
         return;
       }
       
-      const newItems = text.split(',').map(f => f.trim()).filter(f => f.length > 0);
+      const newFlavors = text.split(',').map(f => f.trim()).filter(f => f.length > 0);
       
-      if (newItems.length === 0) {
-        bot.sendMessage(chatId, `❌ Укажите хотя бы один ${state.isColors ? 'цвет' : 'вкус'}`);
+      if (newFlavors.length === 0) {
+        bot.sendMessage(chatId, '❌ Укажите хотя бы один вкус');
         return;
       }
       
-      // Определяем работаем с цветами или вкусами
-      const isColors = state.isColors || false;
-      const fieldName = isColors ? 'colors' : 'flavors';
-      
-      // Добавляем новые элементы к существующим
-      const currentItems = product[fieldName] || [];
-      const updatedItems = [
-        ...currentItems,
-        ...newItems.map(name => ({ name, stock: '', enabled: true }))
+      // Добавляем новые вкусы к существующим
+      const currentFlavors = product.flavors || [];
+      const updatedFlavors = [
+        ...currentFlavors,
+        ...newFlavors.map(name => ({ name, stock: '', enabled: true }))
       ];
       
       // Обновляем товар в глобальном массиве
       const productIndex = products.findIndex(p => p.id === state.productId);
       if (productIndex !== -1) {
-        products[productIndex][fieldName] = updatedItems;
+        products[productIndex].flavors = updatedFlavors;
       }
       
       // Сохраняем в Redis
       if (redis) {
         try {
-          await redis.set('products', JSON.stringify({ products, categories }));
+          await redis.set('products', JSON.stringify(products));
           console.log('✅ Товары обновлены в Redis');
         } catch (e) {
           console.error('❌ Ошибка сохранения в Redis:', e);
@@ -702,18 +704,15 @@ bot.on('message', async (msg) => {
       
       // Также сохраняем через productManager (для fallback в файл)
       const { updateProduct } = require('../utils/productManager');
-      updateProduct(state.productId, { [fieldName]: updatedItems });
+      updateProduct(state.productId, { flavors: updatedFlavors });
       
       delete addProductState[userId];
       
-      const itemIcon = isColors ? '🎨' : '🍃';
-      const itemType = isColors ? 'цветов' : 'вкусов';
-      
       bot.sendMessage(chatId,
-        `✅ *${itemIcon} ${itemType.charAt(0).toUpperCase() + itemType.slice(1)} добавлены!*\n\n` +
-        `📦 Товар: ${state.productName}\n` +
-        `➕ Добавлено: ${newItems.length}\n` +
-        `📊 Всего: ${updatedItems.length}`,
+        `✅ *Вкусы добавлены!*\n\n` +
+        `💧 Жидкость: ${state.productName}\n` +
+        `🎨 Добавлено вкусов: ${newFlavors.length}\n` +
+        `📊 Всего вкусов: ${updatedFlavors.length}`,
         {
           parse_mode: 'Markdown',
           ...adminMenuObj
@@ -2752,76 +2751,9 @@ bot.on('callback_query', async (query) => {
     return;
   }
 
-  // Выбор категории для добавления вкусов/цветов
-  if (data.startsWith('addflav_cat_')) {
-    const category = data.replace('addflav_cat_', '');
-    let categoryProducts = [];
-    let categoryName = '';
-    let itemType = 'вкусов'; // вкусов или цветов
-    
-    if (category === 'liquids') {
-      categoryProducts = products.filter(p => p.categoryId === 'liquids');
-      categoryName = '💧 Жидкости';
-      itemType = 'вкусов';
-    } else if (category === 'cotton') {
-      // Ватки - это конкретный товар
-      const cotton = products.find(p => p.id === 'cotton');
-      if (cotton) categoryProducts = [cotton];
-      categoryName = '📍 Ватки';
-      itemType = 'вкусов';
-    } else if (category === 'shaiba') {
-      // Шайбы - показываем все подтовары шайб
-      categoryProducts = products.filter(p => p.parentId === 'shaiba' || p.id === 'shaiba');
-      categoryName = '📍 Шайбы';
-      itemType = 'вкусов';
-    } else if (category === 'disposable') {
-      // Одноразки - только с colors
-      categoryProducts = products.filter(p => p.categoryId === 'disposable' && p.colors);
-      categoryName = '❤️‍🔥 Одноразки';
-      itemType = 'цветов';
-    }
-    
-    if (categoryProducts.length === 0) {
-      bot.answerCallbackQuery(query.id, { text: '❌ Нет товаров в этой категории', show_alert: true });
-      return;
-    }
-    
-    // Показываем список товаров для выбора (первые 20)
-    const keyboard = categoryProducts.slice(0, 20).map(product => [{
-      text: product.name,
-      callback_data: `addflavor_${category}_${product.id}`
-    }]);
-    
-    bot.editMessageText(
-      `${categoryName}\n\nВыберите товар для добавления ${itemType}:`,
-      {
-        chat_id: chatId,
-        message_id: query.message.message_id,
-        parse_mode: 'Markdown',
-        reply_markup: {
-          inline_keyboard: keyboard
-        }
-      }
-    ).catch(() => {});
-    
-    bot.answerCallbackQuery(query.id);
-    return;
-  }
-
-  // Выбор товара для добавления вкусов/цветов
+  // Выбор жидкости для добавления вкусов
   if (data.startsWith('addflavor_')) {
-    const parts = data.split('_');
-    let category = null;
-    let productId = null;
-    
-    // Новый формат: addflavor_category_productId или старый: addflavor_productId
-    if (parts.length >= 3) {
-      category = parts[1]; // liquids, cotton, shaiba, disposable
-      productId = parts.slice(2).join('_');
-    } else {
-      productId = parts.slice(1).join('_');
-    }
-    
+    const productId = data.replace('addflavor_', '');
     const product = products.find(p => p.id === productId);
     
     if (!product) {
@@ -2829,23 +2761,17 @@ bot.on('callback_query', async (query) => {
       return;
     }
     
-    // Определяем тип: вкусы или цвета
-    const isColors = category === 'disposable' || (product.colors && !product.flavors);
-    const itemType = isColors ? 'цвета' : 'вкусы';
-    const itemIcon = isColors ? '🎨' : '🍃';
-    
-    // Инициализируем состояние для добавления вкусов/цветов
+    // Инициализируем состояние для добавления вкусов
     addProductState[userId] = {
       step: 'add_flavors',
       productId: productId,
-      productName: product.name,
-      isColors: isColors
+      productName: product.name
     };
     
     bot.deleteMessage(chatId, query.message.message_id).catch(() => {});
     bot.sendMessage(chatId,
-      `${itemIcon} *${product.name}*\n\n` +
-      `Введите новые ${itemType} через запятую (например: "${isColors ? 'Black, White, Red' : 'Манго лед, Клубника, Дыня'}")\n\n` +
+      `💧 *${product.name}*\n\n` +
+      `Введите новые вкусы через запятую (например: "Манго лед, Клубника, Дыня")\n\n` +
       `Для отмены используйте /cancel`,
       { parse_mode: 'Markdown' }
     );
