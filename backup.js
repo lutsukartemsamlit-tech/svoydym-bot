@@ -67,8 +67,9 @@ const redis = new Redis({
 
 Promise.all([
   redis.get('products'),
-  redis.get('orders')
-]).then(([products, orders]) => {
+  redis.get('orders'),
+  redis.get('reviews')
+]).then(([products, orders, reviews]) => {
   
   // Products
   if (products) {
@@ -92,6 +93,32 @@ Promise.all([
       JSON.stringify(ordersData, null, 2)
     );
     console.log(`   ✅ Orders: ${ordersArray.length} заказов`);
+  }
+
+  // Reviews
+  if (reviews) {
+    const reviewsData = typeof reviews === 'string' ? JSON.parse(reviews) : reviews;
+    const reviewsArray = Array.isArray(reviewsData) ? reviewsData : [];
+    
+    fs.writeFileSync(
+      path.join(backupDir, 'redis_reviews_backup.json'),
+      JSON.stringify(reviewsData, null, 2)
+    );
+    // Также обновляем локальный файл
+    fs.writeFileSync('data/reviews.json', JSON.stringify(reviewsArray, null, 2));
+    console.log(`   ✅ Reviews: ${reviewsArray.length} отзывов`);
+  } else {
+    // Если отзывов нет в Redis — берём из файла
+    try {
+      const localReviews = JSON.parse(fs.readFileSync('data/reviews.json', 'utf8'));
+      if (localReviews.length > 0) {
+        fs.writeFileSync(
+          path.join(backupDir, 'redis_reviews_backup.json'),
+          JSON.stringify(localReviews, null, 2)
+        );
+        console.log(`   ✅ Reviews (из файла): ${localReviews.length} отзывов`);
+      }
+    } catch(e) {}
   }
   
   console.log('');

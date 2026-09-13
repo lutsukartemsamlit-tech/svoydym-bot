@@ -3,6 +3,35 @@ const path = require('path');
 
 const REVIEWS_FILE = path.join(__dirname, '..', 'data', 'reviews.json');
 
+// Redis клиент
+let redis = null;
+try {
+  if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
+    const { Redis } = require('@upstash/redis');
+    redis = new Redis({
+      url: process.env.UPSTASH_REDIS_REST_URL,
+      token: process.env.UPSTASH_REDIS_REST_TOKEN,
+    });
+  }
+} catch (e) {}
+
+// Кеш отзывов в памяти
+let reviewsCache = null;
+
+async function loadReviewsFromRedis() {
+  if (!redis) return false;
+  try {
+    const data = await redis.get('reviews');
+    if (data) {
+      reviewsCache = typeof data === 'string' ? JSON.parse(data) : data;
+      // Синхронизируем файл
+      try { fs.writeFileSync(REVIEWS_FILE, JSON.stringify(reviewsCache, null, 2)); } catch(e) {}
+      return true;
+    }
+  } catch (e) {}
+  return false;
+}
+
 function ensureFile() {
   const dir = path.dirname(REVIEWS_FILE);
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
@@ -10,9 +39,13 @@ function ensureFile() {
 }
 
 function getReviews() {
+  // Сначала из кеша
+  if (reviewsCache !== null) return reviewsCache;
+  // Затем из файла
   ensureFile();
   try {
-    return JSON.parse(fs.readFileSync(REVIEWS_FILE, 'utf8'));
+    reviewsCache = JSON.parse(fs.readFileSync(REVIEWS_FILE, 'utf8'));
+    return reviewsCache;
   } catch {
     return [];
   }
@@ -21,13 +54,23 @@ function getReviews() {
 function saveReview(review) {
   const reviews = getReviews();
   reviews.unshift(review); // новые сверху
-  fs.writeFileSync(REVIEWS_FILE, JSON.stringify(reviews, null, 2));
+  reviewsCache = reviews;
+  // Сохраняем в файл (fallback)
+  try { fs.writeFileSync(REVIEWS_FILE, JSON.stringify(reviews, null, 2)); } catch(e) {}
+  // Сохраняем в Redis (основное)
+  if (redis) {
+    redis.set('reviews', JSON.stringify(reviews)).catch(e => console.error('Redis reviews save error:', e));
+  }
 }
 
 function deleteReview(id) {
   const reviews = getReviews();
   const filtered = reviews.filter(r => r.id !== id);
-  fs.writeFileSync(REVIEWS_FILE, JSON.stringify(filtered, null, 2));
+  reviewsCache = filtered;
+  try { fs.writeFileSync(REVIEWS_FILE, JSON.stringify(filtered, null, 2)); } catch(e) {}
+  if (redis) {
+    redis.set('reviews', JSON.stringify(filtered)).catch(e => console.error('Redis reviews save error:', e));
+  }
   return reviews.length !== filtered.length;
 }
 
@@ -48,4 +91,4 @@ function hasRecentReview(userId, days = 30) {
   return reviews.some(r => r.userId === userId && new Date(r.date).getTime() > cutoff);
 }
 
-module.exports = { getReviews, saveReview, deleteReview, getStats, hasRecentReview };
+module.exports = { getReviews, saveReview, deleteReview, getStats, hasRecentReview, loadReviewsFromRedis };
