@@ -135,6 +135,15 @@ const botOptions = {
 
 const bot = new TelegramBot(token, botOptions);
 
+// Глобальная обработка unhandled rejections (для отладки)
+process.on('unhandledRejection', (error) => {
+  console.error('❌ Unhandled rejection:', error);
+  if (error && error.message && error.message.includes('wrong file identifier')) {
+    console.error('🔍 ПРОБЛЕМА: Попытка отправить старый file_id!');
+    console.error('Stack:', error.stack);
+  }
+});
+
 // Обработка ошибок polling (409 Conflict - нормальная ситуация при перезапуске)
 bot.on('polling_error', (error) => {
   // Игнорируем 409 Conflict - это происходит при перезапуске бота
