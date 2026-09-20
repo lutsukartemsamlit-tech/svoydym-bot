@@ -142,7 +142,27 @@ process.on('unhandledRejection', (error) => {
     console.error('🔍 ПРОБЛЕМА: Попытка отправить старый file_id!');
     console.error('Stack:', error.stack);
   }
+  // НЕ крашим процесс - просто логируем
 });
+
+// Безопасная обёртка для sendPhoto
+const originalSendPhoto = bot.sendPhoto.bind(bot);
+bot.sendPhoto = function(chatId, photo, options) {
+  // Проверяем что это не старый file_id от Puff_Now63
+  if (typeof photo === 'string' && photo.startsWith('AgACAgIAAxkBAAI')) {
+    console.error(`🚫 Заблокирован старый file_id: ${photo.substring(0, 30)}...`);
+    console.error('Trace:', new Error().stack);
+    // Отправляем текст вместо фото
+    if (options && options.caption) {
+      return bot.sendMessage(chatId, options.caption, { 
+        parse_mode: options.parse_mode,
+        reply_markup: options.reply_markup 
+      });
+    }
+    return Promise.resolve();
+  }
+  return originalSendPhoto(chatId, photo, options);
+};
 
 // Обработка ошибок polling (409 Conflict - нормальная ситуация при перезапуске)
 bot.on('polling_error', (error) => {
