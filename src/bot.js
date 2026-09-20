@@ -226,7 +226,7 @@ bot.onText(/\/start/, async (msg) => {
   
   const welcomeText = 
     `Привет, ${firstName}! 👋\n\n` +
-    `Добро пожаловать в PuffNow_63! 🏪\n\n` +
+    `Добро пожаловать в СВОЙ ДЫМ! 🏪\n\n` +
     `💨 У нас большой ассортимент вейп-продукции:\n` +
     `• Одноразки/подики\n` +
     `• Жидкости\n` +
@@ -234,10 +234,7 @@ bot.onText(/\/start/, async (msg) => {
     `• Энергетики\n\n` +
     `Выберите действие из меню ниже:`;
 
-  bot.sendPhoto(chatId, 'AgACAgIAAxkBAAIBbGpsZeQTcBF6z6O3yS6CO_2eq75mAALvHWsbFE5hS_nvyP8d07FrAQADAgADeQADPQQ', {
-    caption: welcomeText,
-    ...(isAdminUser ? adminMenu : mainMenu)
-  });
+  bot.sendMessage(chatId, welcomeText, isAdminUser ? adminMenu : mainMenu);
 });
 
 // Команда отмены чата с поддержкой
@@ -2599,17 +2596,14 @@ bot.on('callback_query', async (query) => {
       const adminMenu = buildAdminMenu(WEBAPP_URL, userId);
       const welcomeText =
         `Привет, ${firstName}! 👋\n\n` +
-        `Добро пожаловать в PuffNow_63! 🏪\n\n` +
+        `Добро пожаловать в СВОЙ ДЫМ! 🏪\n\n` +
         `💨 У нас большой ассортимент вейп-продукции:\n` +
         `• Одноразки/подики\n` +
         `• Жидкости\n` +
         `• Расходники\n` +
         `• Энергетики\n\n` +
         `Выберите действие из меню ниже:`;
-      bot.sendPhoto(chatId, 'AgACAgIAAxkBAAIBbGpsZeQTcBF6z6O3yS6CO_2eq75mAALvHWsbFE5hS_nvyP8d07FrAQADAgADeQADPQQ', {
-        caption: welcomeText,
-        ...(isAdminUser ? adminMenu : mainMenu)
-      });
+      bot.sendMessage(chatId, welcomeText, isAdminUser ? adminMenu : mainMenu);
     } else {
       bot.answerCallbackQuery(query.id, { text: '❌ Вы ещё не подписались на канал!', show_alert: true });
     }
