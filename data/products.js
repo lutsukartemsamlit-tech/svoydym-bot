@@ -21,6 +21,11 @@ const categories = [
     "icon": "📍"
   },
   {
+    "id": "cotton",
+    "name": "Ватки",
+    "icon": "🌸"
+  },
+  {
     "id": "energy",
     "name": "Энергетики",
     "icon": "🧃"

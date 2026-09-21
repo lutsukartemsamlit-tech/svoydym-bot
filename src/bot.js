@@ -261,6 +261,7 @@ bot.onText(/\/start/, async (msg) => {
     `• Подики\n` +
     `• Жидкости\n` +
     `• Расходники\n` +
+    `• Ватки\n` +
     `• Энергетики\n\n` +
     `Выберите действие из меню ниже:`;
 
@@ -1124,6 +1125,7 @@ function showAssortment(chatId, messageId = null) {
       [{ text: '🔋 Подики', callback_data: 'cat_pods' }],
       [{ text: '💧 Жидкости', callback_data: 'cat_liquids' }],
       [{ text: '📍 Расходники', callback_data: 'cat_accessories' }],
+      [{ text: '🌸 Ватки', callback_data: 'cat_cotton' }],
       [{ text: '🧃 Энергетики', callback_data: 'cat_energy' }]
     ]
   };
@@ -2090,6 +2092,7 @@ function showAdminProducts(chatId, messageId = null) {
     [{ text: '❤️‍🔥 Одноразки', callback_data: 'admin_cat_disposable' }],
     [{ text: '🔋 Подики', callback_data: 'admin_cat_pods' }],
     [{ text: '📍 Расходники', callback_data: 'admin_cat_accessories' }],
+    [{ text: '🌸 Ватки', callback_data: 'admin_cat_cotton' }],
     [{ text: '🧃 Энергетики', callback_data: 'admin_cat_energy' }],
     [{ text: '⬅️ Назад', callback_data: 'admin_panel' }]
   ];
@@ -2637,6 +2640,7 @@ bot.on('callback_query', async (query) => {
         `• Подики\n` +
         `• Жидкости\n` +
         `• Расходники\n` +
+        `• Ватки\n` +
         `• Энергетики\n\n` +
         `Выберите действие из меню ниже:`;
       bot.sendMessage(chatId, welcomeText, isAdminUser ? adminMenu : mainMenu);
