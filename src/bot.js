@@ -257,7 +257,8 @@ bot.onText(/\/start/, async (msg) => {
     `Привет, ${firstName}! 👋\n\n` +
     `Добро пожаловать в СВОЙ ДЫМ! 🏪\n\n` +
     `💨 У нас большой ассортимент вейп-продукции:\n` +
-    `• Одноразки/подики\n` +
+    `• Одноразки\n` +
+    `• Подики\n` +
     `• Жидкости\n` +
     `• Расходники\n` +
     `• Энергетики\n\n` +
@@ -1119,7 +1120,8 @@ bot.on('message', async (msg) => {
 function showAssortment(chatId, messageId = null) {
   const keyboard = {
     inline_keyboard: [
-      [{ text: '❤️‍🔥 Одноразки/подики', callback_data: 'cat_disposable' }],
+      [{ text: '❤️‍🔥 Одноразки', callback_data: 'cat_disposable' }],
+      [{ text: '🔋 Подики', callback_data: 'cat_pods' }],
       [{ text: '💧 Жидкости', callback_data: 'cat_liquids' }],
       [{ text: '📍 Расходники', callback_data: 'cat_accessories' }],
       [{ text: '🧃 Энергетики', callback_data: 'cat_energy' }]
@@ -2082,7 +2084,8 @@ function showAdminPanel(chatId, messageId = null) {
 function showAdminProducts(chatId, messageId = null) {
   const keyboard = [
     [{ text: '💧 Жидкости', callback_data: 'admin_cat_liquids' }],
-    [{ text: '❤️‍🔥 Одноразки/подики', callback_data: 'admin_cat_disposable' }],
+    [{ text: '❤️‍🔥 Одноразки', callback_data: 'admin_cat_disposable' }],
+    [{ text: '🔋 Подики', callback_data: 'admin_cat_pods' }],
     [{ text: '📍 Расходники', callback_data: 'admin_cat_accessories' }],
     [{ text: '🧃 Энергетики', callback_data: 'admin_cat_energy' }],
     [{ text: '⬅️ Назад', callback_data: 'admin_panel' }]
@@ -2627,7 +2630,8 @@ bot.on('callback_query', async (query) => {
         `Привет, ${firstName}! 👋\n\n` +
         `Добро пожаловать в СВОЙ ДЫМ! 🏪\n\n` +
         `💨 У нас большой ассортимент вейп-продукции:\n` +
-        `• Одноразки/подики\n` +
+        `• Одноразки\n` +
+        `• Подики\n` +
         `• Жидкости\n` +
         `• Расходники\n` +
         `• Энергетики\n\n` +

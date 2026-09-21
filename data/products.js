@@ -2,8 +2,13 @@
 const categories = [
   {
     "id": "disposable",
-    "name": "Одноразки/подики",
+    "name": "Одноразки",
     "icon": "❤️‍🔥"
+  },
+  {
+    "id": "pods",
+    "name": "Подики",
+    "icon": "🔋"
   },
   {
     "id": "liquids",
