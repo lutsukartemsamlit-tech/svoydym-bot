@@ -1189,8 +1189,11 @@ function showCategoryProducts(chatId, categoryId, messageId = null) {
   });
   
   sortedProducts.forEach(product => {
+    const label = product.isParent
+      ? product.name.toUpperCase()
+      : `${product.name} - ${formatPrice(product.price)}`.toUpperCase();
     keyboard.push([{ 
-      text: `${product.name} - ${formatPrice(product.price)}`.toUpperCase(), 
+      text: label,
       callback_data: `view_${product.id}` 
     }]);
   });
