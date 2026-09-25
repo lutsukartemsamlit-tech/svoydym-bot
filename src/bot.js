@@ -28,16 +28,16 @@ async function loadProductsFromRedis() {
       if (cachedData) {
         const parsedData = typeof cachedData === 'string' ? JSON.parse(cachedData) : cachedData;
         
-        // Redis хранит только массив products, categories берем из файла
+        // Redis может хранить массив или объект { products: [...], categories: [...] }
         if (Array.isArray(parsedData)) {
           products = parsedData;
-          console.log('✅ Товары загружены из Redis:', products.length);
-          const raz = products.find(p => p.name && p.name.includes('РАЗЪЕБАШКА'));
-          if (raz) {
-            console.log('   ✅ РАЗЪЕБАШКА найдена в Redis! ID:', raz.id, 'Цена:', raz.price);
-          } else {
-            console.log('   ❌ РАЗЪЕБАШКА НЕ НАЙДЕНА в Redis!');
+          console.log('✅ Товары загружены из Redis (массив):', products.length);
+        } else if (parsedData && Array.isArray(parsedData.products)) {
+          products = parsedData.products;
+          if (Array.isArray(parsedData.categories)) {
+            categories = parsedData.categories;
           }
+          console.log('✅ Товары загружены из Redis (объект):', products.length);
         } else {
           console.log('⚠️ Неверный формат данных в Redis, загружаем из файла');
           const fileData = require('../data/products');
