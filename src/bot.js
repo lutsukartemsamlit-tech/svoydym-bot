@@ -1587,7 +1587,7 @@ function showFlavorSelection(chatId, productId, messageId, selectedFlavors = [])
 
 // Точки самовывоза
 const PICKUP_POINTS = [
-  { id: 'metro_pobedy', name: '📍 Метро Победы', address: 'Метро Победы' }
+  { id: 'akademichesky', name: '📍 Академический / Юго-западный район', address: 'Академический / Юго-западный район' }
 ];
 
 // Показать выбор точки самовывоза
@@ -1603,7 +1603,7 @@ function showPickupSelection(chatId, messageId) {
 
   keyboard.push([{ text: '❌ Отмена', callback_data: 'show_cart' }]);
 
-  const text = `🏪 *Выберите точку самовывоза:*\n\n📍 *Метро Победы*`;
+  const text = `🏪 *Выберите точку самовывоза:*\n\n📍 *Академический / Юго-западный район*`;
 
   bot.editMessageText(text, {
     chat_id: chatId,
