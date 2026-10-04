@@ -1825,7 +1825,7 @@ function showManagers(chatId) {
     chatId,
     `👥 *Менеджеры*\n\n` +
     `По всем вопросам пишите нашему менеджеру:\n\n` +
-    `👨‍💼 @docs\\_neww\n\n` +
+    `👨‍💼 @veil\\_king\n\n` +
     `Нашли баг в боте?\n\n👨‍💼 @neresu`,
     { parse_mode: 'Markdown' }
   );
