@@ -1283,25 +1283,16 @@ function showProductDetail(chatId, productId, messageId = null, userId = null) {
       });
     } else {
       // Без фото - только текст
+      // Всегда удаляем старое сообщение и отправляем новое, чтобы избежать проблем с типом сообщения
       if (messageId) {
-        bot.editMessageText(caption, {
-          chat_id: chatId,
-          message_id: messageId,
-          parse_mode: 'Markdown',
-          reply_markup: { inline_keyboard: keyboard }
-        }).catch(() => {
-          bot.deleteMessage(chatId, messageId).catch(() => {});
-          bot.sendMessage(chatId, caption, {
-            parse_mode: 'Markdown',
-            reply_markup: { inline_keyboard: keyboard }
-          });
-        });
-      } else {
-        bot.sendMessage(chatId, caption, {
-          parse_mode: 'Markdown',
-          reply_markup: { inline_keyboard: keyboard }
-        });
+        bot.deleteMessage(chatId, messageId).catch(() => {});
       }
+      bot.sendMessage(chatId, caption, {
+        parse_mode: 'Markdown',
+        reply_markup: { inline_keyboard: keyboard }
+      }).catch(err => {
+        console.error('Ошибка отправки сообщения родительского товара:', err);
+      });
     }
     return;
   }
