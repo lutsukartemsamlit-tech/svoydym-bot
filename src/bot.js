@@ -206,6 +206,9 @@ const reviewState = {};
 // Хранилище состояний для добавления товара: { userId: { step: 'name'|'price'|'description'|'flavors', data: {...} } }
 const addProductState = {};
 
+// Хранилище состояний для админских действий
+const userStates = {};
+
 // Подключаем модуль чата
 const chat = require('../utils/chat');
 
@@ -671,6 +674,51 @@ bot.on('message', async (msg) => {
   // Проверка подписки
   if (!(await isSubscribed(userId))) {
     sendSubscribeMessage(chatId);
+    return;
+  }
+
+  // ========== ОБРАБОТКА УСТАНОВКИ КОЛИЧЕСТВА ВКУСА ==========
+  if (userStates[userId] && userStates[userId].action === 'set_flavor_stock') {
+    const state = userStates[userId];
+    delete userStates[userId];
+
+    await loadProductsFromRedis();
+
+    const product = products.find(p => p.id === state.productId);
+    if (!product || !product.flavors || !product.flavors[state.flavorIndex]) {
+      bot.sendMessage(chatId, '❌ Вкус не найден');
+      return;
+    }
+
+    const flavor = product.flavors[state.flavorIndex];
+    const stockValue = text.trim();
+
+    if (typeof flavor === 'object') {
+      flavor.stock = stockValue;
+    } else {
+      product.flavors[state.flavorIndex] = { name: flavor, stock: stockValue, enabled: true };
+    }
+
+    // Сохраняем в Redis
+    if (redis) {
+      try {
+        await redis.set('products', JSON.stringify({ products, categories }));
+        console.log('✅ Количество вкуса обновлено в Redis');
+      } catch (e) {
+        console.error('❌ Ошибка сохранения в Redis:', e);
+      }
+    }
+
+    const stockDisplay = stockValue ? `"${stockValue}"` : 'удалено';
+    bot.sendMessage(chatId, 
+      `✅ *Количество обновлено!*\n\n` +
+      `Вкус: ${state.flavorName}\n` +
+      `Количество: ${stockDisplay}`,
+      { parse_mode: 'Markdown' }
+    );
+
+    // Возвращаемся к управлению вкусами
+    showAdminFlavors(chatId, state.productId, null);
     return;
   }
 
@@ -2313,11 +2361,15 @@ function showAdminFlavors(chatId, productId, messageId = null) {
     if (flavorData.stock) text += ` — ${flavorData.stock}`;
     text += `\n`;
 
-    // Кнопка вкл/выкл + кнопка удаления рядом
+    // Кнопка вкл/выкл + кнопка количества + кнопка удаления
     keyboard.push([
       { 
         text: buttonText, 
         callback_data: `admin_toggle_${product.id}_${index}` 
+      },
+      {
+        text: '🔢',
+        callback_data: `admin_setstock_${product.id}_${index}`
       },
       {
         text: '🗑️',
@@ -3176,6 +3228,50 @@ bot.on('callback_query', async (query) => {
       }
     } catch (err) {
       console.error('Error toggling flavor:', err);
+      bot.answerCallbackQuery(query.id, { text: '❌ Ошибка: ' + err.message });
+    }
+  } else if (data.startsWith('admin_setstock_')) {
+    try {
+      const stockData = data.replace('admin_setstock_', '');
+      const parts = stockData.split('_');
+      const flavorIndex = parseInt(parts[parts.length - 1]);
+      const productId = parts.slice(0, -1).join('_');
+      
+      const product = products.find(p => p.id === productId);
+      if (!product || !product.flavors || !product.flavors[flavorIndex]) {
+        bot.answerCallbackQuery(query.id, { text: '❌ Вкус не найден' });
+        return;
+      }
+      
+      const flavor = product.flavors[flavorIndex];
+      const flavorName = typeof flavor === 'object' ? flavor.name : flavor;
+      
+      // Сохраняем состояние для ожидания ввода количества
+      userStates[userId] = {
+        action: 'set_flavor_stock',
+        productId: productId,
+        flavorIndex: flavorIndex,
+        flavorName: flavorName,
+        messageId: query.message.message_id
+      };
+      
+      bot.editMessageText(
+        `🔢 *Установка количества*\n\n` +
+        `Товар: ${product.name}\n` +
+        `Вкус: ${flavorName}\n\n` +
+        `Введите количество (например: "5 шт" или просто "5"):\n` +
+        `_Оставьте пустым для удаления количества_\n\n` +
+        `Или /cancel для отмены`,
+        {
+          chat_id: chatId,
+          message_id: query.message.message_id,
+          parse_mode: 'Markdown'
+        }
+      );
+      
+      bot.answerCallbackQuery(query.id);
+    } catch (err) {
+      console.error('Error setting stock:', err);
       bot.answerCallbackQuery(query.id, { text: '❌ Ошибка: ' + err.message });
     }
   } else if (data.startsWith('admin_deleteflavor_')) {
