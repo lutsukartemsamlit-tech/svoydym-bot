@@ -1361,7 +1361,7 @@ function showProductDetail(chatId, productId, messageId = null, userId = null) {
       const flavorText = typeof flavor === 'string' ? flavor : flavor.name;
       const flavorStock = typeof flavor === 'object' ? flavor.stock : '';
       
-      caption += `┃ ${flavorText}${flavorStock ? ` — ${flavorStock}` : ''}\n`;
+      caption += `┃ ${flavorText}\n`;
     });
   }
   // Если есть цвета
@@ -3259,8 +3259,11 @@ bot.on('callback_query', async (query) => {
         `🔢 *Установка количества*\n\n` +
         `Товар: ${product.name}\n` +
         `Вкус: ${flavorName}\n\n` +
-        `Введите количество (например: "5 шт" или просто "5"):\n` +
-        `_Оставьте пустым для удаления количества_\n\n` +
+        `Введите количество штук (например: *5*):\n` +
+        `• Когда заказ завершится — остаток уменьшится автоматически\n` +
+        `• При 0 — вкус отключится сам\n` +
+        `• Покупателям количество не показывается\n\n` +
+        `_Оставьте пустым чтобы убрать ограничение (вкус не отключается автоматически)_\n\n` +
         `Или /cancel для отмены`,
         {
           chat_id: chatId,
@@ -3438,7 +3441,7 @@ bot.on('callback_query', async (query) => {
       return;
     }
 
-    // Выключаем вкусы для каждого товара в заказе
+    // Выключаем/уменьшаем вкусы для каждого товара в заказе
     const disabledFlavors = [];
     const orderItems = order.items || [];
 
@@ -3456,13 +3459,29 @@ bot.on('callback_query', async (query) => {
 
       if (flavorIndex !== -1) {
         const flavor = product.flavors[flavorIndex];
-        if (typeof flavor === 'object') {
-          flavor.enabled = false;
+        const flavorObj = typeof flavor === 'object' ? flavor : { name: flavor, stock: '', enabled: true };
+        const stockNum = parseInt(flavorObj.stock);
+        const qty = item.qty || 1;
+
+        if (!isNaN(stockNum)) {
+          // Есть числовой остаток — уменьшаем
+          const newStock = stockNum - qty;
+          flavorObj.stock = newStock > 0 ? String(newStock) : '';
+          flavorObj.enabled = newStock > 0;
+          if (newStock <= 0) {
+            disabledFlavors.push(`${product.name} — ${item.flavor}`);
+            console.log(`✅ Вкус выключен (остаток 0): ${product.name} / ${item.flavor}`);
+          } else {
+            console.log(`✅ Остаток уменьшен до ${newStock}: ${product.name} / ${item.flavor}`);
+          }
         } else {
-          product.flavors[flavorIndex] = { name: flavor, stock: '', enabled: false };
+          // Нет числового остатка — просто выключаем как раньше
+          flavorObj.enabled = false;
+          disabledFlavors.push(`${product.name} — ${item.flavor}`);
+          console.log(`✅ Вкус выключен: ${product.name} / ${item.flavor}`);
         }
-        disabledFlavors.push(`${product.name} — ${item.flavor}`);
-        console.log(`✅ Вкус выключен: ${product.name} / ${item.flavor}`);
+
+        product.flavors[flavorIndex] = flavorObj;
       }
     }
 
