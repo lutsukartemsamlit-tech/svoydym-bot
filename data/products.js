@@ -22,7 +22,7 @@ const categories = [
   },
   {
     "id": "cotton",
-    "name": "Ватки",
+    "name": "Никотиновые ватки",
     "icon": "🌸"
   },
   {
